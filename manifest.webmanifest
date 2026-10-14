@@ -1,0 +1,20 @@
+{
+  "name": "Terim Atölyesi",
+  "short_name": "Terimler",
+  "description": "IB Türkçe A HL Paper 1 ve 2 için 364 analiz terimi: aralıklı tekrar, hızlı kartlar, sınav modu.",
+  "lang": "tr",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F3F6FC",
+  "theme_color": "#1E4FC2",
+  "categories": ["education"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}

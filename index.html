@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Terim Atölyesi</title>
+<meta name="description" content="IB Türkçe A HL Paper 1 ve 2 için 364 analiz terimi: aralıklı tekrar, hızlı kartlar, sınav modu.">
+<meta name="theme-color" content="#1E4FC2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&family=DM+Serif+Display:ital@0;1&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+ <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+ <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v5h-5"/></symbol>
+ <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+ <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM8.5 13l2.5 2.5 4.5-5"/></symbol>
+ <symbol id="i-split" viewBox="0 0 24 24"><path d="M7 7h12l-3-3M17 17H5l3 3"/></symbol>
+ <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 7h3.5c2 0 3 1 4.2 2.8l2.6 4.4C14.5 16 15.5 17 17.5 17H21M3 17h3.5c1.4 0 2.3-.5 3.1-1.4M14.4 8.4C15.2 7.5 16.1 7 17.5 7H21M18 4l3 3-3 3M18 14l3 3-3 3"/></symbol>
+ <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol>
+ <symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 4h11a2 2 0 0 1 2 2v12"/></symbol>
+ <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c3.9 0 7-2.6 7-6.4 0-3-1.8-5.3-3.9-7.4-.2 2-1.2 3.6-2.7 3.6-1.6 0-1.9-3.5-.9-7.8-4 2-7.5 6-7.5 11.6C5 18.4 8.1 21 12 21z"/></symbol>
+ <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></symbol>
+ <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+ <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z"/></symbol>
+</svg>
+<a class="skip" href="#app">İçeriğe geç</a>
+<div class="band" aria-hidden="true"></div>
+<div class="wrap">
+<header class="top">
+ <button class="brand" id="brand" aria-label="Terim Atölyesi, ana sayfa"><span class="logo" aria-hidden="true">T</span><span><b>Terim Atölyesi</b><small>Türkçe A HL · Paper 1 ve 2</small></span></button>
+ <button class="btn sm" id="inst" hidden><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg>Uygulamayı kur</button>
+ <nav class="tabs" aria-label="Ana menü">
+  <button class="tab" data-go="home"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span>Çalış</span></button>
+  <button class="tab" data-go="dict"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><span>Sözlük</span></button>
+  <button class="tab" data-go="set"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg><span>Ayarlar</span></button>
+ </nav>
+</header>
+<main id="app" tabindex="-1"></main>
+</div>
+<div class="sr-only" id="sr" aria-live="polite" aria-atomic="true"></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

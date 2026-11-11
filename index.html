@@ -4,54 +4,125 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Terim Atölyesi</title>
-<meta name="description" content="IB Türkçe A HL Paper 1 ve 2 için 364 analiz terimi: aralıklı tekrar, hızlı kartlar, sınav modu.">
-<meta name="theme-color" content="#1E4FC2">
+<meta name="description" content="IB Türkçe A HL Paper 1 ve 2 için 364 analiz terimi: ebru atölyesi, aralıklı tekrar ve 18 çalışma modu.">
+<meta name="theme-color" content="#F6EEDB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1638" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Terimler">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&family=DM+Serif+Display:ital@0;1&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300..800;1,300..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&display=swap">
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
- <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
- <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
- <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
- <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v5h-5"/></symbol>
- <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
- <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM8.5 13l2.5 2.5 4.5-5"/></symbol>
- <symbol id="i-split" viewBox="0 0 24 24"><path d="M7 7h12l-3-3M17 17H5l3 3"/></symbol>
- <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 7h3.5c2 0 3 1 4.2 2.8l2.6 4.4C14.5 16 15.5 17 17.5 17H21M3 17h3.5c1.4 0 2.3-.5 3.1-1.4M14.4 8.4C15.2 7.5 16.1 7 17.5 7H21M18 4l3 3-3 3M18 14l3 3-3 3"/></symbol>
- <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol>
- <symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 4h11a2 2 0 0 1 2 2v12"/></symbol>
- <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c3.9 0 7-2.6 7-6.4 0-3-1.8-5.3-3.9-7.4-.2 2-1.2 3.6-2.7 3.6-1.6 0-1.9-3.5-.9-7.8-4 2-7.5 6-7.5 11.6C5 18.4 8.1 21 12 21z"/></symbol>
- <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></symbol>
- <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
- <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
- <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
- <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
- <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
- <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
- <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M12 3.2c2.6 3.4 5.6 6.4 5.6 10a5.6 5.6 0 0 1-11.2 0c0-3.6 3-6.6 5.6-10z"/><path d="M9.6 14.6a2.6 2.6 0 0 0 2.4 2.2"/></symbol>
+  <symbol id="i-studio" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="3.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="3.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/></symbol>
+  <symbol id="i-jar" viewBox="0 0 24 24"><path d="M12 3.2a8.8 8.8 0 0 0 0 17.6c1.1 0 1.7-.8 1.7-1.7 0-1-.7-1.4-.7-2.2 0-1 .9-1.8 1.9-1.8h2.2A3.9 3.9 0 0 0 21 11.2C21 6.7 17 3.2 12 3.2z"/><circle cx="7.6" cy="11.4" r="1.25"/><circle cx="10.2" cy="7.4" r="1.25"/><circle cx="15" cy="7.6" r="1.25"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"/><path d="M9 7.5h6"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.8c.7 3.3 5.6 5.4 5.6 10.4a5.6 5.6 0 0 1-11.2 0c0-2.5 1.3-4.1 2.6-5.3.2 1.8.9 2.9 2.2 3.4-.6-3.4.3-6.1.8-8.5z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5z"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-review" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20.5h7"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 4h11a2 2 0 0 1 2 2v12"/></symbol>
+  <symbol id="i-learn" viewBox="0 0 24 24"><path d="M3.5 19.5h5v-5h5v-5h5v-5"/><path d="M15 4.5h3.5V8"/></symbol>
+  <symbol id="i-type" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6.5 10h.01M10 10h.01M13.5 10h.01M17 10h.01M7 14h10"/></symbol>
+  <symbol id="i-tiles" viewBox="0 0 24 24"><rect x="2.5" y="8" width="5.5" height="8" rx="1.2"/><rect x="9.25" y="8" width="5.5" height="8" rx="1.2"/><rect x="16" y="8" width="5.5" height="8" rx="1.2"/></symbol>
+  <symbol id="i-gap" viewBox="0 0 24 24"><path d="M2.5 12h4.5M17 12h4.5"/><rect x="8.5" y="8" width="7" height="8" rx="1.5" stroke-dasharray="2.2 2.2"/></symbol>
+  <symbol id="i-lens" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m14.5 14.5 6 6M7.5 10h5"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.8 8 5.5 10 5.5 13v4h4.5v-4.5H7.6c0-1.9.8-3 2.4-3.6zM18.5 7c-2.7 1-4 3-4 6v4H19v-4.5h-2.4c0-1.9.8-3 2.4-3.6z"/></symbol>
+  <symbol id="i-chain" viewBox="0 0 24 24"><rect x="2.5" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/><rect x="15.5" y="9" width="6" height="6" rx="1.5"/><path d="M5.5 6.5V5M12 6.5V5M18.5 6.5V5"/></symbol>
+  <symbol id="i-twin" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/></symbol>
+  <symbol id="i-match" viewBox="0 0 24 24"><path d="M4 7h12l-3-3M20 17H8l3 3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 3.5c1.4 1.9 2.7 3.4 2.7 5.1a2.7 2.7 0 0 1-5.4 0c0-1.7 1.3-3.2 2.7-5.1zM16.5 9c1.6 2.1 3 3.8 3 5.7a3 3 0 0 1-6 0c0-1.9 1.4-3.6 3-5.7zM8.5 15c1 1.3 1.9 2.4 1.9 3.6a1.9 1.9 0 0 1-3.8 0c0-1.2.9-2.3 1.9-3.6z"/></symbol>
+  <symbol id="i-shelf" viewBox="0 0 24 24"><path d="M3.5 20.5h17M3.5 13h17"/><rect x="5" y="5" width="3" height="8" rx=".8"/><rect x="9.5" y="7" width="3" height="6" rx=".8"/><rect x="14" y="15" width="3" height="5.5" rx=".8"/><path d="m16 5.5 3.3 7"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></symbol>
+  <symbol id="i-test" viewBox="0 0 24 24"><path d="M10 6h10M10 12h10M10 18h10"/><path d="m3.5 6 1.3 1.3L7.3 4.8M3.5 12l1.3 1.3 2.5-2.5M3.5 18l1.3 1.3 2.5-2.5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4.5c4-2 6 2 10 0s4 0 4 0v8.5s-1.5-1.5-4 0-6-2-10 0"/></symbol>
+  <symbol id="i-talk" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8 8.5h8M8 12h5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V9M7 14l5-5 5 5M5 4h14"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8.5 3v4M15.5 3v4"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+  <symbol id="i-comb" viewBox="0 0 24 24"><path d="M3.5 6.5h17M5.5 6.5V18M9 6.5V15M12.5 6.5V18M16 6.5V15M19.5 6.5V18"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></symbol>
 </svg>
-<a class="skip" href="#app">İçeriğe geç</a>
-<div class="band" aria-hidden="true"></div>
-<div class="wrap">
+<a class="skip" href="#main">İçeriğe geç</a>
+
 <header class="top">
- <button class="brand" id="brand" aria-label="Terim Atölyesi, ana sayfa"><span class="logo" aria-hidden="true">T</span><span><b>Terim Atölyesi</b><small>Türkçe A HL · Paper 1 ve 2</small></span></button>
- <button class="btn sm" id="inst" hidden><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg>Uygulamayı kur</button>
- <nav class="tabs" aria-label="Ana menü">
-  <button class="tab" data-go="home"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span>Çalış</span></button>
-  <button class="tab" data-go="dict"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><span>Sözlük</span></button>
-  <button class="tab" data-go="set"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg><span>Ayarlar</span></button>
- </nav>
+  <div class="top-in">
+    <button class="brand" id="brand" aria-label="Terim Atölyesi, ana sayfa">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span class="brand-txt"><b>Terim Atölyesi</b><small>Türkçe A HL · Paper 1 ve 2</small></span>
+    </button>
+    <nav class="nav" aria-label="Bölümler">
+      <i class="nav-ind" aria-hidden="true"></i>
+      <button data-go="home" aria-current="page"><svg class="ic sm" aria-hidden="true"><use href="#i-home"/></svg>Atölye<span class="badge" data-due hidden>0</span></button>
+      <button data-go="studio"><svg class="ic sm" aria-hidden="true"><use href="#i-studio"/></svg>Stüdyo</button>
+      <button data-go="boya"><svg class="ic sm" aria-hidden="true"><use href="#i-jar"/></svg>Boyalar</button>
+      <button data-go="lex"><svg class="ic sm" aria-hidden="true"><use href="#i-book"/></svg>Sözlük</button>
+    </nav>
+    <div class="top-tools">
+      <span class="chip-xp" id="topXP" title="Toplam XP"><svg class="ic sm" aria-hidden="true"><use href="#i-spark"/></svg><span class="tnum" id="topXPn">0</span></span>
+      <span class="chip-streak" title="Günlük seri"><svg class="ic sm" aria-hidden="true"><use href="#i-flame"/></svg><span id="topStreak" class="tnum">0</span></span>
+      <button class="btn sm" id="btnInstall" hidden><svg class="ic sm" aria-hidden="true"><use href="#i-down"/></svg>Kur</button>
+      <button class="iconbtn" id="btnSettings" aria-label="Ayarlar"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></button>
+    </div>
+  </div>
 </header>
-<main id="app" tabindex="-1"></main>
-</div>
+
+<main class="wrap" id="main" tabindex="-1">
+  <section class="view" id="v-home" aria-label="Atölye"></section>
+  <section class="view" id="v-studio" aria-label="Stüdyo" hidden></section>
+  <section class="view" id="v-boya" aria-label="Boyalar" hidden></section>
+  <section class="view" id="v-cat" aria-label="Boya" hidden></section>
+  <section class="view" id="v-lex" aria-label="Sözlük" hidden></section>
+  <section class="view" id="v-sess" aria-label="Çalışma" hidden></section>
+  <section class="view" id="v-play" aria-label="Stüdyo modu" hidden></section>
+</main>
+<footer class="foot"><span>364 terim · 19 boya · 48 yakın okuma metni</span><span><span class="dot" aria-hidden="true"></span> İlerleme bu cihazda saklanıyor</span></footer>
+
+<nav class="tabbar" aria-label="Bölümler">
+  <i class="tab-ind" aria-hidden="true"></i>
+  <button data-go="home" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg>Atölye<span class="badge" data-due hidden>0</span></button>
+  <button data-go="studio"><svg class="ic" aria-hidden="true"><use href="#i-studio"/></svg>Stüdyo</button>
+  <button data-go="boya"><svg class="ic" aria-hidden="true"><use href="#i-jar"/></svg>Boyalar</button>
+  <button data-go="lex"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Sözlük</button>
+</nav>
+
+<div class="sheet-bg" id="sheetBg" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true" tabindex="-1"></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
 <div class="sr-only" id="sr" aria-live="polite" aria-atomic="true"></div>
-<div class="toast" id="toast" role="status" hidden></div>
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<canvas id="fx" aria-hidden="true"></canvas>
+<script src="js/data.js?v=2"></script>
+<script src="js/passages.js?v=2"></script>
+<script src="js/core.js?v=2"></script>
+<script src="js/ebru.js?v=2"></script>
+<script src="js/ui.js?v=2"></script>
+<script src="js/studio.js?v=2"></script>
+<script>
+boot();
+if ('serviceWorker' in navigator && location.protocol !== 'file:') window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+</script>
 </body>
 </html>

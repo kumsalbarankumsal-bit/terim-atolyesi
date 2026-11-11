@@ -1,7 +1,7 @@
 /* Terim Atölyesi: çevrimdışı çalışma için önbellek */
-const CACHE = "terim-atolyesi-v1";
-const SHELL = ["./", "index.html", "styles.css", "js/data.js", "js/app.js", "manifest.webmanifest",
-  "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png"];
+const CACHE = "terim-atolyesi-v2";
+const SHELL = ["./", "index.html", "styles.css", "js/data.js", "js/passages.js", "js/core.js", "js/ebru.js", "js/ui.js", "js/studio.js",
+  "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -28,5 +28,5 @@ self.addEventListener("fetch", e => {
   e.respondWith(fetch(req).then(r => {
     if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
     return r;
-  }).catch(async () => (await caches.match(req)) || (req.mode === "navigate" ? caches.match("index.html") : Response.error())));
+  }).catch(async () => (await caches.match(req, { ignoreSearch: true })) || (req.mode === "navigate" ? caches.match("index.html") : Response.error())));
 });

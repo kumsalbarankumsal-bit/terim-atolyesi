@@ -1,24 +1,53 @@
 # Terim Atölyesi
 
-IB Türkçe A HL Paper 1 ve Paper 2 için 364 analiz terimini öğreten çalışma uygulaması. 19 alan, 33 sık karıştırılan terim çifti.
+IB Türkçe A HL Paper 1 ve Paper 2 için 364 analiz terimini öğreten çalışma uygulaması. 19 alan ("boya"), 33 sık karıştırılan terim çifti ve atölye için yazılmış 48 kısa yakın okuma metni içerir.
 
-Çalışma yolları: aralıklı tekrar (1 gün → 3 gün → 1 hafta → 2 hafta → 1 ay), keşif kartları, hızlı kartlar, sınav modu, karıştırılanlar, serbest pratik, zorlu terimler. Sesli okuma, yazı boyutu, geniş satır aralığı, yüksek kontrast, hareket azaltma ve klavye kısayolları var.
+Uygulama bir ebru atölyesi gibi kurgulandı. Açılış ekranındaki tekne gerçek bir ebru simülasyonudur: boya damlaları birbirini iterek yayılır, tarak ve bız geçişleri desen çizer. Tekneye dokunarak damla bırakabilir, sürükleyerek bızla desen çekebilirsin. Renk paleti günün saatine göre (şafak, gündüz, ikindi, gece) değişir. Her alan bir boya kavanozudur: terimleri öğrendikçe kavanoz dolar. XP ile dokuz ebru tekniği açılır (Battal'dan Üstat işine) ve her seviyede yeni bir kâğıt koleksiyona eklenir.
+
+## Çalışma yolları
+
+Ana sayfada **Bugün tezgâhta** paneli vadesi gelen tekrarları, sıradaki keşfi, zorlu terimleri ve yarım kalan maratonu gösterir.
+
+- **Keşif**: yeni terimle tanışma kartı. "Zaten biliyorum" diyorsan tek soruyla kanıtlarsın; beş terimde bir kısa kontrol gelir.
+- **Tekrar**: aralıklı tekrar (1 gün → 3 gün → 1 hafta → 2 hafta → 1 ay). Soru türü terimin basamağına göre zorlaşır: tanıma, seçme, örnekte bulma, sonunda yazma.
+
+**Stüdyo**'da 18 mod var. Her biri herhangi bir sette çalışır (bütün terimler, bir boya, vadesi gelenler, zorlular, yıldızlılar, notlular, yeniler):
+
+| Grup | Modlar |
+|---|---|
+| Tanış | Kartlar (çevir, kaydır), Öğren (tanı → seç → yaz), Anlat (kendi sözlerinle) |
+| Hatırla ve üret | Yaz, Harf harf, Tanım tamamla |
+| Metinde gör | Örnekte bul, Yakın okuma, Cümle kur (kanıt → teknik → etki), İkiz terimler |
+| Oyunlar | Eşleştir (süreli), Hafıza (ebru kartları), Şimşek (60 sn), Ebru yağmuru, Raflara diz |
+| Sına ve kalıcı yap | Test (geri bildirimsiz), Maraton (bir alanı baştan sona), Bağ kur (kendi notun) |
+
+Sözlük'te arama, durum ve boya filtreleri, yıldız, kişisel not ve sesli okuma bulunur.
+
+## Okuma rahatlığı
+
+Ayarlar: yazı boyutu (kaydırıcı), geniş satır aralığı, yüksek kontrast, açık/koyu/saate göre tema, hareket (tam, sade, kapalı), açılış animasyonu, ses ve titreşim, otomatik ilerleme, sesli okuma ve hızı, günlük XP hedefi. Yazı tipleri: Atkinson Hyperlegible Next (gövde) ve Fraunces (başlıklar). İşletim sisteminde "hareketi azalt" açıksa animasyonlar kendiliğinden sadeleşir.
 
 ## Yapı
 
 Derleme adımı yok; düz statik site.
 
 ```
-index.html             sayfa iskeleti
-styles.css             tasarım sistemi (açık ve koyu tema)
+index.html             sayfa iskeleti, SVG simgeleri
+styles.css             tasarım sistemi, bütün animasyonlar
 js/data.js             364 terim [alan, terim, İngilizce, anlam, örnek] + karıştırılan çiftler
-js/app.js              ekranlar, aralıklı tekrar, soru üretimi, ayarlar
+js/passages.js         yakın okuma metinleri [terim, metin, kanıt, teknik, etki, özet tuzağı, çeldiriciler]
+js/core.js             veri modeli, kayıt, aralıklı tekrar, XP ve seviyeler, soru üretimi, ses
+js/ebru.js             ebru motoru (damla, tarak, bız, sarmal), canlı tekne, açılış, parçacıklar
+js/ui.js               ana sayfa, boyalar, sözlük, terim sayfası, ayarlar, keşif ve tekrar oturumları
+js/studio.js           Stüdyo ve 18 çalışma modu
 manifest.webmanifest   uygulama olarak kurulum bilgileri
 sw.js                  çevrimdışı çalışma için önbellek
-icons/                 uygulama simgeleri
+icons/                 uygulama simgeleri (ebru motoruyla üretildi)
 ```
 
-İlerleme tarayıcının `localStorage`'ında (`terim-atolyesi-v1`) tutulur; her cihaz ve tarayıcı kendi ilerlemesini saklar.
+İlerleme tarayıcının `localStorage`'ında (`terim-atolyesi-v2`) tutulur. Önceki sürümün kaydı (`terim-atolyesi-v1`) ilk açılışta otomatik taşınır. Ayarlar'dan yedek indirip başka cihaza yükleyebilirsin.
+
+Ebru motoru, Aubrey Jaffer'in "Mathematical Marbling" çalışmasındaki dönüşümlere dayanır: damla için P' = C + (P − C)·√(1 + r²/|P − C|²), tarak ve bız için z·λ/(d + λ) ve sarmal için açısal kaydırma.
 
 ## Vercel
 
@@ -26,4 +55,4 @@ Framework preset: **Other**, build komutu yok, output directory: kök (`.`).
 
 ## Cihaza kurma
 
-Site açıkken Chrome'da üst çubuktaki **Uygulamayı kur** düğmesine ya da Chrome menüsündeki **Uygulamayı yükle / Ana ekrana ekle** seçeneğine dokun. Kurulduktan sonra internet olmadan da açılır.
+Site açıkken Chrome'da üst çubuktaki **Uygulamayı kur** düğmesine ya da Chrome menüsündeki **Uygulamayı yükle / Ana ekrana ekle** seçeneğine dokun. Kurulduktan sonra internet olmadan da açılır. Uygulama simgesine basılı tutunca **Tekrar** ve **Stüdyo** kısayolları çıkar.

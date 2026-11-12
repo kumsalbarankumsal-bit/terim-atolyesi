@@ -110,7 +110,7 @@ function typeable(it) { return it.c !== 'f' && it.c !== 'p' && !/\.\.\.|…/.tes
    ===================================================================== */
 const LS2 = 'terim-atolyesi-v2', LS1 = 'terim-atolyesi-v1';
 const PREF_DEF = { fs: 19, lh: 0, hc: 0, theme: 'light', motion: 'full', intro: 'day', introDay: '', sound: 1, haptic: 1, auto: 0, rate: 0.95, goal: 150, adv: 1 };
-function freshState() { return { v: 2, p: {}, xp: 0, days: {}, ans: {}, f: {}, notes: {}, best: {}, ta: 0, tc: 0, lv: 0, pref: Object.assign({}, PREF_DEF), st: { src: 'all', size: 20, order: 'smart' }, mo: {}, exam: null, upd: 0, born: Date.now() }; }
+function freshState() { return { v: 2, p: {}, xp: 0, days: {}, ans: {}, f: {}, notes: {}, best: {}, ta: 0, tc: 0, lv: 0, pref: Object.assign({}, PREF_DEF), st: { src: 'all', size: 20, order: 'smart' }, mo: {}, exam: null, p2: {}, p2sc: 'all', p2tab: 'temel', p2chk: null, upd: 0, born: Date.now() }; }
 let S = freshState();
 let MIGRATED = false;
 (function load() {
@@ -120,7 +120,7 @@ let MIGRATED = false;
     S = Object.assign(freshState(), raw);
     S.pref = Object.assign({}, PREF_DEF, raw.pref || {});
     S.st = Object.assign({ src: 'all', size: 20, order: 'smart' }, raw.st || {});
-    ['p', 'days', 'ans', 'f', 'notes', 'best', 'mo'].forEach(k => { if (!S[k] || typeof S[k] !== 'object') S[k] = {}; });
+    ['p', 'days', 'ans', 'f', 'notes', 'best', 'mo', 'p2'].forEach(k => { if (!S[k] || typeof S[k] !== 'object') S[k] = {}; });
     return;
   }
   let old = null;

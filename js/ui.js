@@ -4,7 +4,7 @@
    Atölye (ana sayfa), Boyalar, boya ayrıntısı, Sözlük, paneller, ayarlar,
    keşif ve aralıklı tekrar oturumları, seviye atlama.
    ===================================================================== */
-const PAGES = ['home', 'studio', 'boya', 'lex'];
+const PAGES = ['home', 'studio', 'boya', 'lex', 'p2'];
 let VIEW = 'home', CAT = null;
 
 /* ---------- genel ---------- */
@@ -56,6 +56,7 @@ function updateTop() {
   const ch = $('.chip-streak'); if (ch) ch.classList.toggle('lit', !!todayXP());
   const x = $('#topXPn'); if (x) x.textContent = S.xp.toLocaleString('tr-TR');
   $$('[data-due]').forEach(b => { b.hidden = !due; b.textContent = due > 99 ? '99+' : due; });
+  if (typeof p2dueCount === 'function') { const d2 = p2dueCount(); $$('[data-p2due]').forEach(b => { b.hidden = !d2; b.textContent = d2 > 99 ? '99+' : d2; }); }
   const bm = $('.brand-mark'); if (bm && !bm.dataset.p) { bm.dataset.p = 1; idle(() => { const u = EB.image('brand:' + ymd(), 'gelgit', 88, 88, hashStr(ymd()), EB.phaseOf(), { cap: 900 }); if (u) bm.style.backgroundImage = `url(${u})`; }); }
 }
 const RENDER = {};
@@ -107,6 +108,7 @@ function boardHTML() {
     : task({ run: 'review', dis: 1, ic: 'review', t: 'Tekrar yok', s: f[1] ? `Yarın ${f[1]} terim tekrara gelecek` : 'Öğrendiğin terimler ertesi gün buraya düşer', n: '—', col: '#737A90' }));
   if (nc) { const left = nextNewIn(nc).length; rows.push(task({ run: 'disc', arg: nc, ic: 'spark', t: (BYCAT[nc].some(x => status(x.k) !== 'new') ? 'Keşfe devam: ' : 'Keşfet: ') + CATS[nc], s: `${PIG[nc].n} boyası · ${BYCAT[nc].length} terimden ${left} yeni`, n: left, nl: 'yeni', col: PIG[nc].h })); }
   if (hard) rows.push(task({ run: 'hard', ic: 'target', t: 'Zorlu terimler', s: 'İki kez yanlış yaptıkların; Öğren moduyla üç basamakta pekiştir', n: hard, nl: 'zorlu', col: '#8B3FC6' }));
+  if (typeof p2BoardTask === 'function') { const t2 = p2BoardTask(); if (t2) rows.push(t2); }
   if (S.exam && S.exam.pos < S.exam.keys.length) rows.push(task({ run: 'exam', ic: 'flag', t: 'Maratona devam', s: `${S.exam.name} · ${S.exam.pos}/${S.exam.keys.length} terim`, n: Math.round(S.exam.pos / S.exam.keys.length * 100) + '%', col: '#2A44B8' }));
   const pk = pick(PASSAGES);
   rows.push(task({ run: 'mode', arg: c.seen > 15 ? 'lens' : 'cards', ic: c.seen > 15 ? 'lens' : 'cards', t: c.seen > 15 ? 'Yakın okuma' : 'Kartlarla tanış', s: c.seen > 15 ? `Kısa metinde terimi bul: “${trunc(pk.txt.replace(/[⟦⟧]/g, ''), 54)}”` : 'Bir boyanın terimlerini çevir, bilmediklerin yeni turda gelsin', col: '#0B97A4' }));
@@ -751,6 +753,7 @@ document.addEventListener('click', e => {
     case 'exam': stLaunch('exam', {}); break;
     case 'studio': { const st = stSet(); st.src = a ? 'c:' + a : 'all'; touch(); show('studio'); break; }
     case 'mode': stLaunch(a, r.dataset.src ? { set: { src: 'c:' + r.dataset.src } } : {}); break;
+    case 'p2': p2Run(a || 'go'); break;
   }
 });
 $('#brand').addEventListener('click', () => show('home'));

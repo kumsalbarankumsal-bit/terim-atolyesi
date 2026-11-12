@@ -87,6 +87,7 @@ function stLaunch(k, over) {
 }
 function plStop() {
   if (!PL) return;
+  if (PL.M.stop) try { PL.M.stop(PL); } catch (e) {}
   (PL.tm || []).forEach(t => { clearTimeout(t); clearInterval(t); }); PL.tm = [];
   if (PL.raf) cancelAnimationFrame(PL.raf); PL.raf = 0;
 }
@@ -166,7 +167,7 @@ function plAct(a, t, e) {
   if (a === 'quit') { plQuit(); return; }
   if (a === 'again') { const P = PL; stLaunch(P.k, Object.assign({}, P.over, { ids: P.M.free ? undefined : P.words.map(w => w.k), set: P.sel, label: P.label })); return; }
   if (a === 'wrong') { const P = PL; stLaunch('learn', { ids: [...P.wrong], set: P.sel, label: 'Yanlışların · ' + P.M.tr }); return; }
-  if (a === 'studio') { plStop(); PL = null; show('studio'); return; }
+  if (a === 'studio') { const g = PL.M.grp; plStop(); PL = null; show(g === 'p2' ? 'p2' : 'studio'); return; }
   if (PL.M.act) PL.M.act(PL, a, t, e);
 }
 /* sürükle-bırak kartı */
@@ -1077,7 +1078,7 @@ RENDER.studio = () => {
   const take = sel.size ? Math.min(base.length, sel.size) : base.length;
   const v = $('#v-studio');
   v.innerHTML = `
-    <div class="page-h"><h1>Stüdyo</h1><span class="sub">${Object.keys(MODES).length} çalışma modu</span></div>
+    <div class="page-h"><h1>Stüdyo</h1><span class="sub">${Object.keys(MODES).filter(k => MODES[k].grp !== 'p2').length} çalışma modu</span></div>
     <p class="lead">Aynı terimleri farklı yollardan çalış. Her mod hafızanın başka bir kapısını çalar; kartın üstünde neden işe yaradığı yazıyor.</p>
     <details class="card st-set" id="stSetBox" ${ST_OPEN ? 'open' : ''} style="${cat ? catStyle(cat) : ''}">
       <summary aria-label="Çalışma setini değiştir">
@@ -1091,7 +1092,8 @@ RENDER.studio = () => {
     </details>
     ${due ? `<button class="st-due" data-run="review">${IC('review')}<span><b>${due} terim tekrar bekliyor</b><small>Aralıklı tekrar Stüdyo'dan önce gelir: zamanı geçmiş tekrar, unutmanın başladığı yerdir.</small></span>${IC('chev', 'sm')}</button>` : ''}
     ${stRoute(c)}
-    ${ST_GROUPS.map(g => `<section class="st-grp g-${g.k}"><div class="st-grp-h"><h2>${g.tr}</h2><i>${g.tag}</i></div><p>${g.d}</p><div class="mgrid">${g.modes.map(k => modeCard(k)).join('')}</div></section>`).join('')}`;
+    ${ST_GROUPS.map(g => `<section class="st-grp g-${g.k}"><div class="st-grp-h"><h2>${g.tr}</h2><i>${g.tag}</i></div><p>${g.d}</p><div class="mgrid">${g.modes.map(k => modeCard(k)).join('')}</div></section>`).join('')}
+    <button class="card p2link st-p2" data-go="p2"><span class="p2link-ic" aria-hidden="true">${IC('p2')}</span><span><b>Paper 2 yöntemi</b><small>Sınavın yapısı, denemenin anatomisi, notunun tamamı ve 7 ayrı çalışma yolu Paper 2 sekmesinde.</small></span>${IC('chev')}</button>`;
   const D = $('#stSetBox'); if (D) D.addEventListener('toggle', () => { ST_OPEN = D.open; const c2 = D.querySelector('.st-chg'); if (c2) c2.textContent = D.open ? 'Kapat' : 'Değiştir'; });
   stSpotlight(v);
 };

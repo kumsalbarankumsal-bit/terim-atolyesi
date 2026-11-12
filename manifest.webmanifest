@@ -1,7 +1,7 @@
 {
   "name": "Terim Atölyesi",
   "short_name": "Terimler",
-  "description": "IB Türkçe A HL Paper 1 ve 2 için 364 analiz terimi: yaşayan ebru teknesi, 18 çalışma modu, aralıklı tekrar ve maraton.",
+  "description": "IB Türkçe A HL Paper 1 ve 2: 364 analiz terimi, yaşayan ebru teknesi, 18 çalışma modu ve Paper 2 yöntem sekmesi.",
   "lang": "tr",
   "id": "/",
   "start_url": "/",
@@ -55,6 +55,17 @@
       "name": "Stüdyo",
       "short_name": "Stüdyo",
       "url": "/?go=studio",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Paper 2",
+      "short_name": "Paper 2",
+      "url": "/?go=p2",
       "icons": [
         {
           "src": "icons/icon-192.png",

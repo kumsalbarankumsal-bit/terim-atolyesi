@@ -23,6 +23,17 @@ Ana sayfada **Bugün tezgâhta** paneli vadesi gelen tekrarları, sıradaki keş
 
 Sözlük'te arama, durum ve boya filtreleri, yıldız, kişisel not ve sesli okuma bulunur.
 
+## Paper 2 sekmesi
+
+Paper 2 yöntem notunun (16 bölüm) tamamı ve sınavın yapısı ayrı bir sekmede. Esere özgü içerik yok; yalnızca IBDP boyunca kullanılacak genel kurallar ve kalıplar.
+
+- **Sınavın yapısı:** 1 sa 45 dk, 4 genel sorudan 1, iki eser, kitap yok, HL'de %25, yasak eserler. Puanlama: Mayıs 2026'dan beri 25 puan (A, B1, B2, C, D; her biri 5), eski 30 puanlık düzenle karşılaştırmalı.
+- **Denemenin yapısı:** 105 dakikalık zaman çizelgesi üzerinde plan, giriş (huni), üç blok (sandviç + 4 halka), sonuç (ters huni) ve kontrol. Her parçaya dokununca notun ilgili bölümü açılır.
+- **Not defteri:** 16 bölüm, dört başlık altında (Temel, Plan, Yazım, Sınav günü). Kalıp cümleler mavi italik, kaçınılacaklar kırmızı. Kalıp defteri ve günlük kontrol listesi.
+- **7 çalışma yolu:** Not kartları, Yöntem testi (89 soru, her biri iki ipuçlu), Sırala (12 sıralı yapı), Kalıbı tamamla (18 kalıp), Değerlendirici gözü (16 zayıf örnek ve daha iyisi), Eşleştir, Prova saati (105 dakikalık deneme provası; aşama değişince ses ve titreşim, ekran açık kalır).
+
+Not satırları ve sorular kendi aralıklı tekrar kaydını tutar; vadesi gelenler ana sayfada ve sekmenin rozetinde görünür.
+
 ## Okuma rahatlığı
 
 Ayarlar: yazı boyutu (kaydırıcı), geniş satır aralığı, yüksek kontrast, açık/koyu/saate göre tema, hareket (tam, sade, kapalı), açılış animasyonu, ses ve titreşim, otomatik ilerleme, sesli okuma ve hızı, günlük XP hedefi. Yazı tipleri: Atkinson Hyperlegible Next (gövde) ve Fraunces (başlıklar). İşletim sisteminde "hareketi azalt" açıksa animasyonlar kendiliğinden sadeleşir.
@@ -40,6 +51,8 @@ js/core.js             veri modeli, kayıt, aralıklı tekrar, XP ve seviyeler, 
 js/ebru.js             ebru motoru (damla, tarak, bız, sarmal), canlı tekne, açılış, parçacıklar
 js/ui.js               ana sayfa, boyalar, sözlük, terim sayfası, ayarlar, keşif ve tekrar oturumları
 js/studio.js           Stüdyo ve 18 çalışma modu
+js/p2data.js           Paper 2 yöntem notu, soru bankası ve alıştırma verisi
+js/paper2.js           Paper 2 sekmesi ve 7 çalışma yolu
 manifest.webmanifest   uygulama olarak kurulum bilgileri
 sw.js                  çevrimdışı çalışma için önbellek
 icons/                 uygulama simgeleri (ebru motoruyla üretildi)
@@ -55,4 +68,4 @@ Framework preset: **Other**, build komutu yok, output directory: kök (`.`).
 
 ## Cihaza kurma
 
-Site açıkken Chrome'da üst çubuktaki **Uygulamayı kur** düğmesine ya da Chrome menüsündeki **Uygulamayı yükle / Ana ekrana ekle** seçeneğine dokun. Kurulduktan sonra internet olmadan da açılır. Uygulama simgesine basılı tutunca **Tekrar** ve **Stüdyo** kısayolları çıkar.
+Site açıkken Chrome'da üst çubuktaki **Uygulamayı kur** düğmesine ya da Chrome menüsündeki **Uygulamayı yükle / Ana ekrana ekle** seçeneğine dokun. Kurulduktan sonra internet olmadan da açılır. Uygulama simgesine basılı tutunca **Tekrar**, **Stüdyo** ve **Paper 2** kısayolları çıkar.

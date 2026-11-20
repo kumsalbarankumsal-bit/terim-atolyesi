@@ -537,7 +537,7 @@ function p2HeroHTML() {
         <div class="p2ring" title="Yöntem hâkimiyeti"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="trk" cx="40" cy="40" r="34"/><circle class="val" cx="40" cy="40" r="34" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${C.toFixed(1)}" data-ring="${(C * (1 - m.pct)).toFixed(1)}"/></svg><b class="tnum" data-count="${Math.round(m.pct * 100)}" data-pre="%" data-ck="p2m">%0</b></div>
         <div class="p2hero-st"><b>Yöntem hâkimiyeti</b><span>${m.seen}/${m.n} kart ve soru görüldü${due ? ` · <b class="due">${due} tekrar bekliyor</b>` : ''}</span></div>
       </div>
-      <div class="p2hero-cta">${cta}<button class="btn ghost lg" data-p2run="clock">${IC('clock')}Prova saati</button></div>
+      <div class="p2hero-cta">${cta}<button class="btn ghost lg" data-feed="p2">${IC('reel')}Paper 2 akışı</button><button class="btn ghost lg" data-p2run="clock">${IC('clock')}Prova saati</button></div>
     </div>
   </section>`;
 }

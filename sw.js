@@ -1,6 +1,6 @@
 /* Terim Atölyesi: çevrimdışı çalışma için önbellek */
-const CACHE = "terim-atolyesi-v3";
-const SHELL = ["./", "index.html", "styles.css", "js/data.js", "js/passages.js", "js/core.js", "js/ebru.js", "js/ui.js", "js/studio.js", "js/p2data.js", "js/paper2.js",
+const CACHE = "terim-atolyesi-v4";
+const SHELL = ["./", "index.html", "styles.css", "js/data.js", "js/passages.js", "js/core.js", "js/ebru.js", "js/ui.js", "js/studio.js", "js/p2data.js", "js/paper2.js", "js/feed.js",
   "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {

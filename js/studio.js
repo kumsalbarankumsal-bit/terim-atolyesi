@@ -1093,6 +1093,7 @@ RENDER.studio = () => {
     ${due ? `<button class="st-due" data-run="review">${IC('review')}<span><b>${due} terim tekrar bekliyor</b><small>Aralıklı tekrar Stüdyo'dan önce gelir: zamanı geçmiş tekrar, unutmanın başladığı yerdir.</small></span>${IC('chev', 'sm')}</button>` : ''}
     ${stRoute(c)}
     ${ST_GROUPS.map(g => `<section class="st-grp g-${g.k}"><div class="st-grp-h"><h2>${g.tr}</h2><i>${g.tag}</i></div><p>${g.d}</p><div class="mgrid">${g.modes.map(k => modeCard(k)).join('')}</div></section>`).join('')}
+    <button class="feedcard st-feed" data-feed=""><span class="fc-t"><small>Akış</small><b>Kaydır, öğren.</b><span>Bütün modların karışımı, tek parmakla: yeni terimler, hızlı sorular, ikizler, yakın okuma ve Paper 2.</span><span class="fc-go">${IC('reel', 'sm')}Akışı aç</span></span></button>
     <button class="card p2link st-p2" data-go="p2"><span class="p2link-ic" aria-hidden="true">${IC('p2')}</span><span><b>Paper 2 yöntemi</b><small>Sınavın yapısı, denemenin anatomisi, notunun tamamı ve 7 ayrı çalışma yolu Paper 2 sekmesinde.</small></span>${IC('chev')}</button>`;
   const D = $('#stSetBox'); if (D) D.addEventListener('toggle', () => { ST_OPEN = D.open; const c2 = D.querySelector('.st-chg'); if (c2) c2.textContent = D.open ? 'Kapat' : 'Değiştir'; });
   stSpotlight(v);

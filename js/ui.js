@@ -4,7 +4,7 @@
    Atölye (ana sayfa), Boyalar, boya ayrıntısı, Sözlük, paneller, ayarlar,
    keşif ve aralıklı tekrar oturumları, seviye atlama.
    ===================================================================== */
-const PAGES = ['home', 'studio', 'boya', 'lex', 'p2'];
+const PAGES = ['home', 'studio', 'feed', 'boya', 'lex', 'p2'];
 let VIEW = 'home', CAT = null;
 
 /* ---------- genel ---------- */
@@ -65,6 +65,7 @@ function show(v, opt) {
   if (v !== 'sess' && SES && !SES.done && VIEW === 'sess' && !opt.force) { sesQuit(); return; }
   const from = VIEW, dir = PAGES.indexOf(v) >= 0 && PAGES.indexOf(from) >= 0 ? (PAGES.indexOf(v) < PAGES.indexOf(from) ? 'l' : 'r') : (v === 'home' ? 'l' : 'r');
   if (v !== 'play' && typeof plStop === 'function' && VIEW === 'play') { plStop(); }
+  if (VIEW === 'feed' && v !== 'feed' && typeof fdLeave === 'function') fdLeave();
   hush();
   vt(() => {
     VIEW = v; document.documentElement.dataset.view = v;
@@ -217,10 +218,17 @@ function miniJarsHTML() {
   </section>`;
 }
 let CLOCK_T = 0;
+function feedCardHTML() {
+  const cs = ['t', 'i', 's', 'd', 'o', 'e'].sort(() => Math.random() - .5).slice(0, 3), due = dueList().length + (typeof p2dueCount === 'function' ? p2dueCount() : 0);
+  return `<button class="feedcard" data-feed="" aria-label="Akışı aç: kaydırarak öğren">
+    <span class="fc-ph" aria-hidden="true">${cs.map(c => `<i data-swatch="${c}" data-w="120" data-h="200"></i>`).join('')}</span>
+    <span class="fc-t"><small>Yeni · Akış</small><b>Kaydır, öğren.</b><span>364 terim, 48 yakın okuma metni ve Paper 2 notu tek akışta${due ? ` · ${due} tekrar içinde` : ''}.</span><span class="fc-go">${IC('reel', 'sm')}Akışı aç</span></span>
+  </button>`;
+}
 RENDER.home = () => {
   const v = $('#v-home');
   v.innerHTML = heroHTML() + `<div class="home-grid">
-      <div class="home-col">${boardHTML()}${wotdHTML()}${homeStudioHTML()}${firstStepsHTML()}</div>
+      <div class="home-col">${feedCardHTML()}${boardHTML()}${wotdHTML()}${homeStudioHTML()}${firstStepsHTML()}</div>
       <div class="home-col">${todayHTML()}${levelHTML()}${forecastHTML()}${heatHTML()}${miniJarsHTML()}</div>
     </div>`;
   tekneMount($('#hero'));
@@ -405,7 +413,7 @@ function paperSheet(i) {
     <p class="muted">${esc(L.d)}</p>
     <p style="margin-top:10px;font-weight:800">${open ? 'Bu kâğıt koleksiyonunda. Ana sayfadaki tekne bu basamağın tekniğiyle çalışır.' : `${(L.xp - S.xp).toLocaleString('tr-TR')} XP sonra açılır.`}</p>`, sh => paintSwatches(sh));
 }
-function rerender() { (RENDER[VIEW] || (() => {}))(); updateTop(); }
+function rerender() { if (VIEW === 'feed') { updateTop(); return; } (RENDER[VIEW] || (() => {}))(); updateTop(); }
 
 /* ---------- ayarlar ---------- */
 function sw(key, label, sub) { return `<div class="set-row"><span><span class="lab">${label}</span>${sub ? `<small>${sub}</small>` : ''}</span><button class="switch" role="switch" aria-checked="${!!S.pref[key]}" data-pref="${key}" aria-label="${label}"></button></div>`; }
@@ -776,7 +784,7 @@ function boot() {
     const go = new URLSearchParams(location.search).get('go');
     if (go) {
       history.replaceState(null, '', location.pathname);
-      setTimeout(() => { if (go === 'review') { if (dueList().length) revStart(); else show('studio'); } else if (PAGES.includes(go)) show(go); }, 300);
+      setTimeout(() => { if (go === 'review') { if (dueList().length) revStart(); else show('studio'); } else if (go === 'feed') fdOpen(); else if (PAGES.includes(go)) show(go); }, 300);
     }
   } catch (e) {}
 }

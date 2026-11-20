@@ -34,6 +34,17 @@ Paper 2 yöntem notunun (16 bölüm) tamamı ve sınavın yapısı ayrı bir sek
 
 Not satırları ve sorular kendi aralıklı tekrar kaydını tutar; vadesi gelenler ana sayfada ve sekmenin rozetinde görünür.
 
+## Akış
+
+Sıkıldığında açacağın, bütün ders içeriğini dikey kaydırmayla sunan tam ekran akış. Ana sayfadaki "Kaydır, öğren" kartından, üst menüdeki ve alt çubuktaki **Akış** düğmesinden ya da kurulu uygulamanın kısayolundan açılır.
+
+- **Kartlar:** yeni terimle tanışma, seçmeli soru (terim, tanım, örnek, İngilizce), doğru mu yanlış mı (sağa/sola kaydır, süre çubuğu), ikiz terimler, yakın okuma, Paper 2 not satırı, yöntem sorusu, kalıbı tamamla, değerlendirici gözü, sırala, puanlama ve süre kartları. Her kart kendi boyasının ebru kâğıdı üzerinde açılır.
+- **Akışın mantığı:** vadesi gelen tekrarlar, yeni terimler, pekiştirme, yakın okuma ve Paper 2 ağırlıklı bir karışımla gelir; aynı tür ya da aynı boya arka arkaya gelmez. Yeni öğrendiğin terim 4–7 kart sonra soru olarak geri döner. Bütün cevaplar aralıklı tekrar kaydına işlenir.
+- **Sekmeler ve kanallar:** Senin için, Terimler, Paper 2, Tekrar. Sağdaki dönen ebru diski o boyanın kanalına geçirir; ayarlar menüsünde bütün kanallar hikâye halkaları olarak durur.
+- **Ödüller ve mola:** seri sayacı ve seri kartları (×5'ten ×100'e), XP uçuşu, günlük hedef ve seviye kartları, yaklaşık 20–35 kartta bir dokunulabilir ebru molası, "hepsini gördün" kartı.
+- **Etkileşim:** çift dokunuşla kaydet (kalp patlaması), Dinle, Ayrıntı; klavyede ↑/↓, j/k, boşluk, 1–4, ←/→, L, Enter, Esc. Android geri tuşu akışı kapatır, kapanışta oturum özeti gelir. Ayarlar: sesli akış, doğru cevaptan sonra kendiliğinden ilerleme, kaydırma tıkırtısı.
+- **Hareket:** kaydırmaya bağlı paralaks, harf harf açılan terimler, Ken Burns ebru arka planı, geniş ekranda kartın renginden bulanık ortam ışığı. "Sade" ve "kapalı" hareket ayarlarına uyar.
+
 ## Okuma rahatlığı
 
 Ayarlar: yazı boyutu (kaydırıcı), geniş satır aralığı, yüksek kontrast, açık/koyu/saate göre tema, hareket (tam, sade, kapalı), açılış animasyonu, ses ve titreşim, otomatik ilerleme, sesli okuma ve hızı, günlük XP hedefi. Yazı tipleri: Atkinson Hyperlegible Next (gövde) ve Fraunces (başlıklar). İşletim sisteminde "hareketi azalt" açıksa animasyonlar kendiliğinden sadeleşir.
@@ -53,6 +64,7 @@ js/ui.js               ana sayfa, boyalar, sözlük, terim sayfası, ayarlar, ke
 js/studio.js           Stüdyo ve 18 çalışma modu
 js/p2data.js           Paper 2 yöntem notu, soru bankası ve alıştırma verisi
 js/paper2.js           Paper 2 sekmesi ve 7 çalışma yolu
+js/feed.js             Akış: kaydırarak öğrenme, kart türleri, öneri karışımı, ödüller
 manifest.webmanifest   uygulama olarak kurulum bilgileri
 sw.js                  çevrimdışı çalışma için önbellek
 icons/                 uygulama simgeleri (ebru motoruyla üretildi)

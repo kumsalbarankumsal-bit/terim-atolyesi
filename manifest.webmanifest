@@ -1,7 +1,7 @@
 {
   "name": "Terim Atölyesi",
   "short_name": "Terimler",
-  "description": "IB Türkçe A HL Paper 1 ve 2: 364 analiz terimi, yaşayan ebru teknesi, 18 çalışma modu ve Paper 2 yöntem sekmesi.",
+  "description": "IB Türkçe A HL Paper 1 ve 2: 364 analiz terimi, kaydırarak öğrenilen Akış, yaşayan ebru teknesi, 18 çalışma modu ve Paper 2 yöntem sekmesi.",
   "lang": "tr",
   "id": "/",
   "start_url": "/",
@@ -40,6 +40,18 @@
     }
   ],
   "shortcuts": [
+    {
+      "name": "Akış",
+      "short_name": "Akış",
+      "description": "Kaydırarak öğren",
+      "url": "/?go=feed",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
     {
       "name": "Tekrar",
       "short_name": "Tekrar",
